@@ -1,11 +1,28 @@
-﻿@import "reset";
-@import "variables";
-@import "phone";
+﻿@import "abstract/variables";
+@import "abstract/mixins";
+@import "abstract/functions";
 
-@media only screen and (min-width:45em) {
-    @import "tablet";
-}
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+@import "base/animation";
 
-@media only screen and (min-width:64.25em) {
-    @import "desktop";
-}
+@import "components/button";
+@import "components/composition";
+@import "components/feature-box";
+@import "components/card";
+@import "components/story";
+@import "components/bg-video";
+@import "components/form";
+
+
+
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/footer";
+@import "layout/navigation";
+
+
+
+@import "pages/home"; 

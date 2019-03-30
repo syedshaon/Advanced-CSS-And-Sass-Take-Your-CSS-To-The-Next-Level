@@ -1,0 +1,159 @@
+.navigation{
+    &_checkbox{
+        display: none;
+    }
+    &_button{
+        background-color: $colWhite;
+        height: 7rem;
+        width: 7rem;
+        position: fixed;
+        top: 6rem;
+        right: 6rem;
+        border-radius: 50%;
+        z-index: 1020;
+        box-shadow: 0 1rem 3rem rgba($colBlack, .1);
+    }
+    &_background{
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%; 
+        position: fixed;
+        top: 6.5rem;
+        right: 6.5rem;
+        background-image: radial-gradient($colPrimaryLT, $colPrimaryDK);
+        z-index: 1000;
+        //transform: scale(80);
+        transition: all 1s  cubic-bezier(0.86, 0, 0.07, 1);
+    }
+    &_nav{
+        height: 100vh;
+        position: fixed;
+        top:0;
+        right: 0;
+        z-index: 1010;
+        opacity: 0;
+        width: 0;
+        transition: all 1s  cubic-bezier(.33,.58,.75,1.39);
+    }
+    &_list{
+        position: absolute;
+        width: 100%;
+        top: -15%;
+        left: 100%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        transition: all 1s;
+
+    }
+    &_item{
+       // margin: 1rem;
+      
+
+    }
+    &_link{
+        display: inline-block;
+        
+        &:link, &:visited{
+        font-size: 3rem;
+        font-weight: 300;
+        padding: .5rem 2rem;
+        color: $colWhite;
+        text-transform: uppercase;
+        background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $colWhite 50%);
+        background-size: 220%;
+        transition: all .4s;
+         span{
+           margin-right: 1.5rem;
+           display: inline-block;
+       }
+        }
+        &:hover, &:active{
+            background-position: 100%;
+            color: $colPrimary;
+            transform: translateX(1rem);
+        }
+        
+    }
+
+    // What happens when clicked
+    &_checkbox:checked ~ &_background{
+        transform: scale(80);
+    }
+    &_checkbox:checked ~ &_nav{
+        opacity: 1;
+        width: 100%;
+    }
+    &_checkbox:checked ~ &_nav>&_list{
+        top: 50%;
+        left: 50%;
+    }
+   // To create longer distance between menu button lines while hover
+    &_checkbox:hover ~ &_button{
+        cursor: pointer; // Could have put it in normal button class
+    }
+
+     &_checkbox:hover ~ &_button &_icon::after{
+        top: 1rem;
+    }
+    &_checkbox:hover ~ &_button &_icon::before{
+       top: -1.1rem;
+    }
+
+    // To make the Cross effect on Menu button and disappear middle line
+     &_checkbox:checked ~ &_button &_icon{
+       background-color: transparent;       
+    }
+
+
+     &_checkbox:checked ~ &_button &_icon::after{
+       // display: inline;
+      //  transform: skewY(-45deg);  This way also works
+       transform: rotate(-135deg);
+       
+       background-color: $colGreydk3;
+        
+       top: 0;
+
+    }
+    &_checkbox:checked ~ &_button &_icon::before{
+       // display: inline;
+        //transform: translate(50%, 0%);
+         //transform: skewY(45deg);
+         transform: rotate(135deg);
+        background-color: $colGreydk3;
+        top: 0;
+        
+    }
+
+    //ICON
+    &_icon{
+        content: "";
+        position: absolute; 
+        //margin-left: 2rem;
+        //margin-top: 3.3rem;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        &, &::before, &::after{
+            width: 3rem;
+            height: 2px;
+            background-color: $colGreydk3;
+            display: inline-block;
+            transition: all 1s;
+        }
+        &::before,&::after{
+            content: "";
+            position: absolute;            
+        }
+        &::before{
+            top: -.9rem;
+        }
+        &::after{
+            top: .8rem;
+        }
+        
+    }
+    
+
+}

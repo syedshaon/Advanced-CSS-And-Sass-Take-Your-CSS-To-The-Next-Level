@@ -1,0 +1,58 @@
+.header_text-box{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(
+      -50%,
+      -50%
+    ); //To make the div in center position horizontally and vertically, TRANSLATE deducts width and height by 50% and div get center
+    text-align: center;
+    .hdPrimary {
+      color: $colWhite;
+      text-transform: uppercase;
+      backface-visibility: hidden;
+      margin-bottom: 6rem; //to create distance between button and this part
+  
+      &_main {
+        font-size: 5rem;
+        display: block;
+        letter-spacing: 2.5rem;
+        font-weight: 700;
+        position: relative;
+        animation: fromLeft ease-in-out 1s;
+      }
+  
+      &_sub {
+        font-size: 2rem;
+        letter-spacing: 1.1rem;
+        display: block;
+        animation: fromRight ease-in-out 1s;
+      }
+    }
+}
+.heading-secondary{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-image: linear-gradient(to right, $colPrimaryLT, $colPrimaryDK);
+    display: inline-block;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: .2rem;
+    transition:all .2s;
+    &:hover{
+        transform: skewY(2deg) skewX(15deg) scale(1.2);
+        text-shadow: .5rem 1 rem 2 rem rgba($colBlack, .2);
+    }
+}
+.heading-tertiary{
+  font-size: $dftFontSize;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.paragraph{
+  font-size: $dftFontSize;
+  &:not(:last-child){
+    margin-bottom: 3rem;
+  }
+}
