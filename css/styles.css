@@ -288,6 +288,8 @@ body {
   position: relative;
   font-size: 1.6rem;
   border: none;
+  -webkit-animation: fromBottom 1s ease-in-out;
+          animation: fromBottom 1s ease-in-out;
 }
 
 .btn:hover {
