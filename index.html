@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <div class="navigation">
+  <div class="navigation" onclick="myFunction()">
     <input type="checkbox" class="navigation_checkbox" id="navi-toggle">
     <label for="navi-toggle" class="navigation_button">
       <span class="navigation_icon"></span>
@@ -31,7 +31,7 @@
       </ul>
     </nav>
   </div>
-  <header class="header">
+  <header id="header" class="header">
     <div class="header_logo-box">
       <img src="img/logo-white.png" alt="Logo" class="header_logo-box_logo" />
     </div>
@@ -44,34 +44,33 @@
       <a href="#" class="btn btn-white">Discover Our Tours</a>
     </div>
   </header>
-  <main>
-    <section class="section-about">
-      <div class="u-center-text u-margin-bottom-bg">
-        <h2 class="heading-secondary">Exciting Tours for adventourous people.</h2>
+  <main class="main" id="main" <section class="section-about">
+    <div class="u-center-text u-margin-bottom-bg">
+      <h2 class="heading-secondary">Exciting Tours for adventourous people.</h2>
+    </div>
+    <div class="row">
+      <div class="col-1-of-2">
+        <h3 class="heading-tertiary u-margin-bottom-sm">
+          You are going to fall in love with nature
+        </h3>
+        <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti vel pariatur
+          distinctio laborum nostrum ipsa voluptatibus et cum dolores eligendi quibusdam, provident consequatur
+          corrupti adipisci fugit iste nam eius nemo.</p>
+        <h3 class="heading-tertiary u-margin-bottom-sm">
+          live adventures like you never have before
+        </h3>
+        <p class="paragraph">Elit. Illo deleniti temporibus aut. Itaque temporibus excepturi vero a? Repellat
+          exercitationem cumque soluta quia sequi!</p>
+        <a href="#" class="btn-text">Learn more &rarr;</a>
       </div>
-      <div class="row">
-        <div class="col-1-of-2">
-          <h3 class="heading-tertiary u-margin-bottom-sm">
-            You are going to fall in love with nature
-          </h3>
-          <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti vel pariatur
-            distinctio laborum nostrum ipsa voluptatibus et cum dolores eligendi quibusdam, provident consequatur
-            corrupti adipisci fugit iste nam eius nemo.</p>
-          <h3 class="heading-tertiary u-margin-bottom-sm">
-            live adventures like you never have before
-          </h3>
-          <p class="paragraph">Elit. Illo deleniti temporibus aut. Itaque temporibus excepturi vero a? Repellat
-            exercitationem cumque soluta quia sequi!</p>
-          <a href="#" class="btn-text">Learn more &rarr;</a>
-        </div>
-        <div class="col-1-of-2">
-          <div class="composition">
-            <img src="img/nat-1-large.jpg" alt="photo 1" class="composition_photo composition_photo_p1">
-            <img src="img/nat-2-large.jpg" alt="photo 2" class="composition_photo composition_photo_p2">
-            <img src="img/nat-3-large.jpg" alt="photo 3" class="composition_photo composition_photo_p3">
-          </div>
+      <div class="col-1-of-2">
+        <div class="composition">
+          <img src="img/nat-1-large.jpg" alt="photo 1" class="composition_photo composition_photo_p1">
+          <img src="img/nat-2-large.jpg" alt="photo 2" class="composition_photo composition_photo_p2">
+          <img src="img/nat-3-large.jpg" alt="photo 3" class="composition_photo composition_photo_p3">
         </div>
       </div>
+    </div>
     </section>
     <section class="section_features">
       <div class="row">
@@ -341,7 +340,7 @@
       </div>
     </div>
   </main>
-  <footer class="footer">
+  <footer class="footer" id="footer">
     <div class="footer_logo-box">
       <img src="img/logo-green-1x.png" alt="Full Logo" class="footer_log">
     </div>
@@ -367,6 +366,23 @@
     </div>
 
   </footer>
+
+  <script type="text/javascript">
+    console.log("javascript working");
+    function myFunction() {
+      if (document.getElementById("navi-toggle").checked) {
+        console.log("its working");
+        document.getElementById("header").style.display = "none";
+        document.getElementById("main").style.display = "none";
+        document.getElementById("footer").style.display = "none";
+      } else {
+        document.getElementById("header").style.display = "block";
+        document.getElementById("main").style.display = "block";
+        document.getElementById("footer").style.display = "block";
+      }
+
+    };
+  </script>
 </body>
 
 </html>
