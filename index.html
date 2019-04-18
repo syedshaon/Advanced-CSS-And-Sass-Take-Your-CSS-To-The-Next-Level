@@ -65,9 +65,21 @@
       </div>
       <div class="col-1-of-2">
         <div class="composition">
-          <img src="img/nat-1-large.jpg" alt="photo 1" class="composition_photo composition_photo_p1">
+          <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+            sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" src="img/nat-1-large.jpg" alt="photo 1"
+            class="composition_photo composition_photo_p1">
+          <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+            sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" src="img/nat-2-large.jpg" alt="photo 2"
+            class="composition_photo composition_photo_p2">
+          <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+            sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" src="img/nat-3-large.jpg" alt="photo 3"
+            class="composition_photo composition_photo_p3">
+          <!--
+            <img src="img/nat-1-large.jpg" alt="photo 1" class="composition_photo composition_photo_p1">
           <img src="img/nat-2-large.jpg" alt="photo 2" class="composition_photo composition_photo_p2">
           <img src="img/nat-3-large.jpg" alt="photo 3" class="composition_photo composition_photo_p3">
+          -->
+
         </div>
       </div>
     </div>
@@ -263,7 +275,9 @@
       <div class="row ">
         <div class="story">
           <figure class="story_shape">
-            <img class="story_image" src="img/nat-8.jpg" alt="person on a tour">
+            <!--  <img class="story_image" src="img/nat-8.jpg" alt="person on a tour">-->
+            <img srcset="img/nat-8-sm.jpg 500w, img/nat-8.jpg 2000w" sizes="(max-width: 900px) 30vw, (max-width: 600px) 45vw, 500px"
+              src="img/nat-8.jpg" alt="person on a tour" class="story_image">
             <figcaption class="story_caption">Mary Smith</figcaption>
           </figure>
           <div class="story_text">
@@ -367,7 +381,14 @@
   </main>
   <footer class="footer" id="footer">
     <div class="footer_logo-box">
-      <img src="img/logo-green-1x.png" alt="Full Logo" class="footer_log">
+      <picture class="footer_log">
+        <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width:37.5em)">
+        <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full Logo" class="footer_log"
+          src="img/logo-green-small-2x.png">
+      </picture>
+      <!--
+      <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full Logo" class="footer_log" >
+    -->
     </div>
     <div class="row">
       <div class="col-1-0f-2">
