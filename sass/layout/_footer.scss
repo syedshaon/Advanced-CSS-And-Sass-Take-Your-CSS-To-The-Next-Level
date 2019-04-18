@@ -2,18 +2,30 @@
     background-color: $colGreydk3;
     padding: 6rem 0;
     font-size: 1.4rem;
+    @include respond(tab-port){
+        padding: 8rem 0;
+    }
     &_logo-box{
         text-align: center;
         margin-bottom: 8rem;
+        @include respond(phone){  
+        margin-bottom: 4rem;
+    }
     }
     &_logo{
         width: 15rem;
         height: auto;
     }
-    &_navigation{
+    &_navigation{ 
+        margin-left: 5rem;
         border-top: 1px solid $colGreyLT;
         padding-top: 2rem;
         display: inline-block;
+        @include respond(tab-port){
+            margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
     }
     &_list{
 
@@ -30,6 +42,14 @@
         display: inline-block;
         width: 80%;
         float: right;
+
+        @include respond(tab-port){
+        width: 100%;
+        text-align: center;
+        float: none;
+    }
+
+
             color: $colGreyLT;
             text-transform: uppercase;            
             font-size: 1rem;

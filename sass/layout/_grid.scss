@@ -1,10 +1,19 @@
 .row{
     max-width: $grid-width; 
+   /* @include respond(tab-port){
+        max-width: 70rem;
+    }
+    @include respond(phone){
+        max-width: 60rem;
+    }*/
     margin: 0 auto;
     @include clearFix;
     
     &:not(:last-child){
         margin-bottom: $gutter-vertical;
+        @include respond(tab-port){
+        margin-bottom: $gutter-vertical-sm;
+    }
     }
     .col{
         
@@ -13,10 +22,26 @@
     float: left;
     &:not(:last-child){
         margin-right: $gutter-horizontal;
+        @include respond(tab-port){
+        margin: 0 auto;
+        margin-bottom: $gutter-vertical-sm;
+    }
+    }
+
+    @include respond(tab-port){
+        float: none;
+        width: 100% !important;
+        max-width: 70rem;
+        padding: 0 3rem;
+        margin: 0 auto;
+    }
+    @include respond(phone){
+        max-width: 60rem;
     }
 }
     .col-1-of-2{
         width: calc((100% - #{$gutter-horizontal})/2);
+        
            
     }
     

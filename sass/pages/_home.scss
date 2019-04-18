@@ -1,56 +1,74 @@
+.section-about {
+	background-color: $colGreyLT;
+	padding: 30rem 0;
+	margin-top: -20vh;
+	@include respond(tab-port) {
+		padding: 20rem 0;
+	}
+}
 
+.section_features {
+	margin-top: -12rem;
+	@include respond(tab-port) {
+		margin-top: 12rem;
+	}
+	padding: 20rem 0;
+	background-image: linear-gradient(to right bottom, rgba($colPrimaryLT, 0.8), rgba($colPrimaryDK, 0.8)),
+		url(../img/nat-4.jpg);
+	background-size: cover;
+	background-position: top;
+	clip-path: polygon(0 11%, 100% 0%, 100% 89%, 0% 100%);
+	// Other than clip path we can also have similar effect with skew as shown below. However we have to select direct child to skew in different direction.
+	/*transform: skewY(-7deg);
+	& > * {
+		transform: skewY(7deg);
+	}*/
+	@include respond(tab-port) {
+		padding: 15rem 0;
+	}
+}
 
-  .section-about{
-    background-color: $colGreyLT;
-    padding: 30rem 0;
-    margin-top: -20vh;
-  }
+.section-tours {
+	//background-color: $colGreyLT;  bcz of this hove on button doesn't work as intendeed
+	padding: 20rem 0 10rem 0;
+	margin-top: -10rem;
+	@include respond(tab-port) {
+		padding: 15rem 0 5rem 0;
+	}
+}
 
-  .section_features{
-    margin-top: -12rem;
-    padding: 20rem 0; 
-    background-image: linear-gradient(
-        to right bottom,
-        rgba($colPrimaryLT, 0.8),
-        rgba($colPrimaryDK, 0.8)
-      ),
-      url(../img/nat-4.jpg);
-      background-size: cover;
-      background-position: top;
-      //clip-path: polygon(0 25vh, 100% 0, 100% 55vh, 0 100%);
-      // Other than clip path we can also have similar effect with skew as shown below. However we have to select direct child to skew in different direction.
-      transform: skewY(-7deg);
-      & > *{        
-        transform: skewY(7deg);
-      }
+.section_stories {
+	padding: 5rem 0;
+	position: relative;
+	@include respond(tab-port) {
+		padding: 0;
+	}
+}
+.section-book {
+	padding: 15rem 0;
+	@include respond(tab-port) {
+		padding: 5rem 0;
+	}
+	background-image: linear-gradient(to right bottom, $colPrimaryLT, $colPrimaryDK);
+}
+.book {
+	width: 100% !important;
+	background-image: linear-gradient(105deg, rgba($colWhite, 0.9) 0%, rgba($colWhite, 0.9) 50%, transparent 50%),
+		url(../img/nat-10.jpg);
+	@include respond(tab-port) {
+		background-image: linear-gradient(105deg, rgba($colWhite, 0.9) 0%, rgba($colWhite, 0.9) 70%, transparent 70%),
+			url(../img/nat-10.jpg);
+	}
+	background-size: cover; //Tutorial gave 100% option but that cause problem in mobile view
 
-  }
-
-  .section-tours{
-    //background-color: $colGreyLT;  bcz of this hove on button doesn't work as intendeed    
-    padding: 20rem 0 10rem 0;     
-    margin-top: -10rem; 
-  }
-
-  .section_stories{
-    padding: 5rem 0; 
-    position: relative;
-  }
-  .section-book{
-    padding: 15rem 0;
-    background-image: linear-gradient(to right bottom, $colPrimaryLT, $colPrimaryDK);
-  }
-  .book{
-    background-image:linear-gradient(105deg,
-     rgba($colWhite, .9) 0%,
-     rgba($colWhite, .9) 50%,
-      transparent 50%),  url(../img/nat-10.jpg);
-    background-size: cover;  //Tutorial gave 100% option but that cause problem in mobile view
-    height: 50rem;
-    border-radius: 3px;
-    box-shadow: 0 1.5 4rem rgba($colBlack,.2);
-    &_form{
-      width: 50%;
-      padding: 6rem;
-    }
-  }
+	border-radius: 3px;
+	box-shadow: 0 1.5 4rem rgba($colBlack, 0.2);
+	&_form {
+		width: 50%;
+		@include respond(tab-port) {
+			width: 80%;
+			padding: 2rem;
+		}
+		padding: 6rem;
+	}
+}

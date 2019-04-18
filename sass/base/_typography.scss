@@ -20,6 +20,11 @@
         font-weight: 700;
         position: relative;
         animation: fromLeft ease-in-out 1s;
+
+        @include respond(phone){
+          letter-spacing: 1rem;
+          font-size: 5rem;
+        }
       }
   
       &_sub {
@@ -27,6 +32,9 @@
         letter-spacing: 1.1rem;
         display: block;
         animation: fromRight ease-in-out 1s;
+        @include respond(phone){
+          letter-spacing: .5rem; 
+        }
       }
     }
 }
@@ -40,6 +48,13 @@
     color: transparent;
     letter-spacing: .2rem;
     transition:all .2s;
+    @include respond(tab-port){
+          font-size: 3rem; 
+        }
+    @include respond(phone){
+          font-size: 2.5rem; 
+        }
+
     &:hover{
         transform: skewY(2deg) skewX(15deg) scale(1.2);
         text-shadow: .5rem 1 rem 2 rem rgba($colBlack, .2);

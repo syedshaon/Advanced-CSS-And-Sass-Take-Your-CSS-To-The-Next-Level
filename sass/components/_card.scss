@@ -1,131 +1,168 @@
-.card{
-    // It works still well without perspective
-    perspective: 150rem;
-    -moz-perspective:150rem;
-    position: relative;
-    height: 48rem;
-    &_side{
-        background-color: orangered; 
-        height: 48rem;
-        transition: all .8s ease;
-        color: white;
-        font-size: 2rem;
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 100%;
-        backface-visibility: hidden;
-        border-radius: 10px;
-        box-shadow: 0 1.5rem 4rem rgba($colBlack, .25);
+.card {
+	// It works still well without perspective
+	perspective: 150rem;
+	-moz-perspective: 150rem;
+	position: relative;
+	height: 48rem;
+	&_side {
+		background-color: orangered;
+		height: 48rem;
+		transition: all 0.8s ease;
+		color: white;
+		font-size: 2rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		backface-visibility: hidden;
+		border-radius: 10px;
+		box-shadow: 0 1.5rem 4rem rgba($colBlack, 0.25);
 
-        overflow: hidden;  // Done to make sure the round edged corner as the background image was hiding that; if still doesn't work move this line under clip path used below
-        &_front{
-            background-color: $colWhite; 
-        }
-        &_back{
-            
-            transform: rotateY(180deg); 
-            &_1{
-                background-image:linear-gradient(to right bottom, $colSecLT, $colSecDK );
-            }
-            &_2{
-                background-image:linear-gradient(to right bottom, $colPrimaryLT, $colPrimaryDK );
-            }
-            &_3{
-                background-image:linear-gradient(to right bottom, $colTerLT, $colTerDK );
-            }
-        }
-    }
-    &:hover &_side_front{
-        transform: rotateY(-180deg); 
-    }
-    &:hover &_side_back{
-        transform: rotateY(0deg);
-    }
-    &_picture{
-        background-size: cover;
-        height: 23rem;
-        background-blend-mode: screen;        
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); 
-        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);   
-        /* not universally supported rahter better to have transparency in linear Gradient
+		overflow: hidden; // Done to make sure the round edged corner as the background image was hiding that; if still doesn't work move this line under clip path used below
+		&_front {
+			background-color: $colWhite;
+		}
+		&_back {
+			transform: rotateY(180deg);
+			&_1 {
+				background-image: linear-gradient(to right bottom, $colSecLT, $colSecDK);
+			}
+			&_2 {
+				background-image: linear-gradient(to right bottom, $colPrimaryLT, $colPrimaryDK);
+			}
+			&_3 {
+				background-image: linear-gradient(to right bottom, $colTerLT, $colTerDK);
+			}
+		}
+	}
+	&:hover &_side_front {
+		transform: rotateY(-180deg);
+	}
+	&:hover &_side_back {
+		transform: rotateY(0deg);
+	}
+	&_picture {
+		background-size: cover;
+		height: 23rem;
+		background-blend-mode: screen;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+		clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+		/* not universally supported rahter better to have transparency in linear Gradient
         &_1{
             background-image:linear-gradient(to right bottom, rgba($colSecLT, .9),rgba($colSecDK, .2) ), url(../img/nat-5.jpg);            
         }
         */
-        &_1{
-            background-image:linear-gradient(to right bottom, $colSecLT, $colSecDK), url(../img/nat-5.jpg);            
-        }
-        &_2{
-            background-image:linear-gradient(to right bottom, $colPrimaryLT, $colPrimaryDK), url(../img/nat-3.jpg);             
-        }
-        &_3{
-            background-image:linear-gradient(to right bottom, $colTerLT, $colTerDK), url(../img/nat-7.jpg);             
-        }
-    }
-    &_heading{
-        font-size: 2.8rem;
-        font-weight: 300;
-        text-transform: uppercase; 
-        position: absolute;
-        text-align: right;
-        top: 12rem;
-        right: 2rem;
-        width: 70%;
-    }
-    &_heading_span{
-        padding: 1rem 1.5rem;
-        box-decoration-break: clone;
-        -webkit-box-decoration-break: clone;
-        &_1{
-            background-image: linear-gradient(to right bottom, rgba($colSecLT, .85), rgba($colSecDK, .85) );
-        }
-        &_2{
-            background-image: linear-gradient(to right bottom, rgba($colPrimaryLT, .85), rgba($colPrimaryDK, .85) );
-        }
-        &_3{
-            background-image: linear-gradient(to right bottom, rgba($colTerLT, .85), rgba($colTerDK, .85) );
-        }
-    }
-    &_details{
-        ul{
-            list-style: none;
-            width: 80%;
-            margin:0 auto;
-            color: $colBlack;
-            li{
-                text-align: center;
-                font-size: 1.5rem;
-                padding: 1rem;
-                &:not(:last-child){
-                    border-bottom: 1px solid $colGreydk;
-                }
+		&_1 {
+			background-image: linear-gradient(to right bottom, $colSecLT, $colSecDK), url(../img/nat-5.jpg);
+		}
+		&_2 {
+			background-image: linear-gradient(to right bottom, $colPrimaryLT, $colPrimaryDK), url(../img/nat-3.jpg);
+		}
+		&_3 {
+			background-image: linear-gradient(to right bottom, $colTerLT, $colTerDK), url(../img/nat-7.jpg);
+		}
+	}
+	&_heading {
+		font-size: 2.8rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		position: absolute;
+		text-align: right;
+		top: 12rem;
+		right: 2rem;
+		width: 70%;
+	}
+	&_heading_span {
+		padding: 1rem 1.5rem;
+		box-decoration-break: clone;
+		-webkit-box-decoration-break: clone;
+		&_1 {
+			background-image: linear-gradient(to right bottom, rgba($colSecLT, 0.85), rgba($colSecDK, 0.85));
+		}
+		&_2 {
+			background-image: linear-gradient(to right bottom, rgba($colPrimaryLT, 0.85), rgba($colPrimaryDK, 0.85));
+		}
+		&_3 {
+			background-image: linear-gradient(to right bottom, rgba($colTerLT, 0.85), rgba($colTerDK, 0.85));
+		}
+	}
+	&_details {
+		ul {
+			list-style: none;
+			width: 80%;
+			margin: 0 auto;
+			color: $colBlack;
+			li {
+				text-align: center;
+				font-size: 1.5rem;
+				padding: 1rem;
+				&:not(:last-child) {
+					border-bottom: 1px solid $colGreydk;
+				}
+			}
+		}
+	}
+	&_cta {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 90%;
+		/* text-align: center; */
+		text-align: center;
+	}
+	&_price_box {
+		text-align: center;
+		color: $colWhite;
+		margin-bottom: 8rem;
+		/* margin-top: 10rem;*/
+	}
+	&_price_only {
+		font-size: 1.4rem;
+		text-transform: uppercase;
+	}
+	&_price_value {
+		font-size: 6rem;
+		font-weight: 100;
+	}
 
-            }
-        }
-    }
-    &_cta{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 90%;
-       /* text-align: center; */
-       text-align: center;
+	@include respond(tab-land) {
+		height: auto;
+		border-radius: 10px;
+		background-color: $colWhite;
+		box-shadow: 0 1.5rem 4rem rgba($colBlack, 0.25);
+		&_side {
+			height: auto;
+			position: relative;
+			padding-bottom: 8rem;
+			box-shadow: none;
 
-    }
-    &_price_box{
-        text-align: center;
-        color: $colWhite;
-        margin-bottom: 8rem;
-        /* margin-top: 10rem;*/
-    }
-    &_price_only{
-        font-size: 1.4rem;
-        text-transform: uppercase;
-    }
-    &_price_value{
-        font-size: 6rem;
-        font-weight: 100;
-    }
+			&_back {
+				border-radius: 0px;
+				transform: rotateY(0);
+				clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+				margin-top: -8rem;
+				padding-bottom: 0rem;
+			}
+		}
+		&:hover &_side_front {
+			transform: rotateY(0);
+		}
+
+		&_cta {
+			position: relative;
+			top: 0;
+			left: 0;
+			transform: translate(0);
+			width: 100%;
+			padding: 4rem;
+		}
+		&_price_box {
+			margin-bottom: 3rem;
+		}
+
+		&_price_value {
+			font-size: 4rem;
+		}
+	}
 }
