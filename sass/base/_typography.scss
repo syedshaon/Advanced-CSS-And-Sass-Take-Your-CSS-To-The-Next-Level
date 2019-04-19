@@ -1,73 +1,76 @@
-.header_text-box{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(
-      -50%,
-      -50%
-    ); //To make the div in center position horizontally and vertically, TRANSLATE deducts width and height by 50% and div get center
-    text-align: center;
-    .hdPrimary {
-      color: $colWhite;
-      text-transform: uppercase;
-      backface-visibility: hidden;
-      margin-bottom: 6rem; //to create distance between button and this part
-  
-      &_main {
-        font-size: 5rem;
-        display: block;
-        letter-spacing: 2.5rem;
-        font-weight: 700;
-        position: relative;
-        animation: fromLeft ease-in-out 1s;
+.header_text-box {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(
+		-50%,
+		-50%
+	); //To make the div in center position horizontally and vertically, TRANSLATE deducts width and height by 50% and div get center
+	text-align: center;
+	.hdPrimary {
+		color: $colWhite;
+		text-transform: uppercase;
+		backface-visibility: hidden;
+		margin-bottom: 6rem; //to create distance between button and this part
 
-        @include respond(phone){
-          letter-spacing: 1rem;
-          font-size: 5rem;
-        }
-      }
-  
-      &_sub {
-        font-size: 2rem;
-        letter-spacing: 1.1rem;
-        display: block;
-        animation: fromRight ease-in-out 1s;
-        @include respond(phone){
-          letter-spacing: .5rem; 
-        }
-      }
-    }
-}
-.heading-secondary{
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    background-image: linear-gradient(to right, $colPrimaryLT, $colPrimaryDK);
-    display: inline-block;
-    -webkit-background-clip: text;
-    color: transparent;
-    letter-spacing: .2rem;
-    transition:all .2s;
-    @include respond(tab-port){
-          font-size: 3rem; 
-        }
-    @include respond(phone){
-          font-size: 2.5rem; 
-        }
+		&_main {
+			font-size: 5rem;
+			display: block;
+			letter-spacing: 2.5rem;
+			font-weight: 700;
+			position: relative;
+			animation: fromLeft ease-in-out 1s;
 
-    &:hover{
-        transform: skewY(2deg) skewX(15deg) scale(1.2);
-        text-shadow: .5rem 1 rem 2 rem rgba($colBlack, .2);
-    }
+			@include respond(phone) {
+				letter-spacing: 1rem;
+				font-size: 5rem;
+			}
+		}
+
+		&_sub {
+			font-size: 2rem;
+			letter-spacing: 1.1rem;
+			display: block;
+			animation: fromRight ease-in-out 1s;
+			@include respond(phone) {
+				letter-spacing: 0.5rem;
+			}
+		}
+	}
 }
-.heading-tertiary{
-  font-size: $dftFontSize;
-  font-weight: 700;
-  text-transform: uppercase;
+.heading-secondary {
+	font-size: 3.5rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	display: inline-block;
+	letter-spacing: 0.2rem;
+	transition: all 0.2s;
+	color: $colPrimary;
+	@supports (-webkit-background-clip: text) {
+		background-image: linear-gradient(to right, $colPrimaryLT, $colPrimaryDK);
+		-webkit-background-clip: text;
+		color: transparent;
+	}
+	@include respond(tab-port) {
+		font-size: 3rem;
+	}
+	@include respond(phone) {
+		font-size: 2.5rem;
+	}
+
+	&:hover {
+		transform: skewY(2deg) skewX(15deg) scale(1.2);
+		text-shadow: 0.5rem 1 rem 2 rem rgba($colBlack, 0.2);
+	}
 }
-.paragraph{
-  font-size: $dftFontSize;
-  &:not(:last-child){
-    margin-bottom: 3rem;
-  }
+.heading-tertiary {
+	font-size: $dftFontSize;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.paragraph {
+	font-size: $dftFontSize;
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
 }
