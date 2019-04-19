@@ -1994,6 +1994,7 @@ body {
 
 .book {
   width: 100% !important;
+  margin: 0 auto;
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
   background-size: cover;
   border-radius: 3px;
@@ -2004,6 +2005,8 @@ body {
 @media only Screen and (max-width: 56.25em) {
   .book {
     background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 70%, transparent 70%), url(../img/nat-10.jpg);
+    width: 90% !important;
+    margin: 0 auto;
   }
 }
 
