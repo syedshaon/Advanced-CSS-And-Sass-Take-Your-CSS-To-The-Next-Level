@@ -66,13 +66,13 @@
       <div class="col-1-of-2">
         <div class="composition">
           <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
-            sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" src="img/nat-1-large.jpg" alt="photo 1"
+            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" src="img/nat-1-large.jpg" alt="photo 1"
             class="composition_photo composition_photo_p1">
           <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
-            sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" src="img/nat-2-large.jpg" alt="photo 2"
+            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" src="img/nat-2-large.jpg" alt="photo 2"
             class="composition_photo composition_photo_p2">
           <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
-            sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" src="img/nat-3-large.jpg" alt="photo 3"
+            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" src="img/nat-3-large.jpg" alt="photo 3"
             class="composition_photo composition_photo_p3">
           <!--
             <img src="img/nat-1-large.jpg" alt="photo 1" class="composition_photo composition_photo_p1">
@@ -276,8 +276,8 @@
         <div class="story">
           <figure class="story_shape">
             <!--  <img class="story_image" src="img/nat-8.jpg" alt="person on a tour">-->
-            <img srcset="img/nat-8-sm.jpg 500w, img/nat-8.jpg 2000w" sizes="(max-width: 900px) 30vw, (max-width: 600px) 45vw, 500px"
-              src="img/nat-8.jpg" alt="person on a tour" class="story_image">
+            <img srcset="img/nat-8-dflt.jpg 1x,  img/nat-8-sm.jpg 2x" src="img/nat-8.jpg" alt="person on a tour"
+              class="story_image">
             <figcaption class="story_caption">Mary Smith</figcaption>
           </figure>
           <div class="story_text">
@@ -295,7 +295,9 @@
       <div class="row ">
         <div class="story">
           <figure class="story_shape">
-            <img class="story_image" src="img/nat-9.jpg" alt="person on a tour">
+            <!--  <img class="story_image" src="img/nat-9.jpg" alt="person on a tour">-->
+            <img srcset="img/nat-9-dflt.jpg 1x,  img/nat-9-sm.jpg 2x" src="img/nat-9.jpg" alt="person on a tour"
+              class="story_image">
             <figcaption class="story_caption">Jack Wilson</figcaption>
           </figure>
           <div class="story_text">
@@ -356,7 +358,10 @@
     <div class="popup" id="popup">
       <div class="popup_content">
         <div class="popup_left">
-          <img src="img/nat-8.jpg" alt="Tour photo" class="popup_img">
+          <!--  <img src="img/nat-8.jpg" alt="Tour photo" class="popup_img"> -->
+          <img srcset="img/nat-8-dflt.jpg 335w, img/nat-8-sm.jpg 500w"
+            sizes="(max-width: 900px) 45vw, (max-width: 600px) 45vw, 335px" src="img/nat-8-dflt.jpg" alt="Tour photo"
+            class="popup_img">
           <img src="img/nat-9.jpg" alt="Tour photo" class="popup_img"> </div>
         <div class="popup_right">
           <a href="#section-tours" class="popup_close">&times;</a>

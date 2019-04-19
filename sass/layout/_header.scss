@@ -1,7 +1,7 @@
 .header {
 	height: 95vh;
 	background-image: linear-gradient(to right bottom, rgba($colPrimaryLT, 0.8), rgba($colPrimaryDK, 0.8)),
-		url(../img/hero.jpg);
+		url(../img/hero-small.jpg);
 	/* background-image: linear-gradient(
         175deg,
         rgba($colPrimaryLT, 0.8) 0%,
@@ -9,6 +9,10 @@
         $colGreyLT 85%,
       ),
       url(../img/hero.jpg);*/
+	@media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 112em) {
+		background-image: linear-gradient(to right bottom, rgba($colPrimaryLT, 0.8), rgba($colPrimaryDK, 0.8)),
+			url(../img/hero.jpg);
+	}
 
 	background-size: cover;
 	background-position: top;
