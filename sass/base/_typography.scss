@@ -59,7 +59,8 @@
 	}
 
 	&:hover {
-		transform: skewY(2deg) skewX(15deg) scale(1.2);
+		//transform: skewY(2deg) skewX(15deg) scale(1.2);
+		transform: scale(1.3);
 		text-shadow: 0.5rem 1 rem 2 rem rgba($colBlack, 0.2);
 	}
 }

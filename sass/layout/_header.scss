@@ -9,7 +9,9 @@
         $colGreyLT 85%,
       ),
       url(../img/hero.jpg);*/
-	@media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 112em) {
+	@media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+		only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+		only screen and (min-width: 112em) {
 		background-image: linear-gradient(to right bottom, rgba($colPrimaryLT, 0.8), rgba($colPrimaryDK, 0.8)),
 			url(../img/hero.jpg);
 	}

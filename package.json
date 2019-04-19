@@ -5,11 +5,21 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer": "^9.5.1",
     "concat": "^1.0.3",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.2"
   },
   "scripts": {
-    "compile-sass": "node-sass sass/styles.scss css/styles.css -w"
+    "watch-sass": "node-sass sass/styles.scss css/styles.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch-sass",
+    "compile-sass": "node-sass css/styles.css css/styles.comp.css",
+    "concat-css": "concat -o css/styles.concat.css css/iconFont.css css/styles.comp.css",
+    "prefix-css": "postcss --use autoprefixer -b  \"last 10 versions\"  css/styles.concat.css -o css/styles.prefix.css",
+    "compress-css": "node-sass css/styles.prefix.css css/styles.min.css --output-style compressed",
+    "build-css": "npm-run-all compile-sass concat-css prefix-css compress-css"
   },
   "repository": {
     "type": "git",
@@ -20,5 +30,5 @@
   "bugs": {
     "url": "https://github.com/syedshaon/Natours/issues"
   },
-  "homepage": "https://github.com/syedshaon/Natours#readme"
+  "homepage": "https://syedshaon.github.io/Natours/"
 }
