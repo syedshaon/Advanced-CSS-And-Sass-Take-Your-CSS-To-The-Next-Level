@@ -9,8 +9,87 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form,
-label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -20,7 +99,18 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, 
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
   display: block;
 }
 
@@ -467,7 +557,7 @@ body {
   z-index: 2;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  outline-offset: 1rem;
+  outline-offset: 0.5rem;
 }
 
 @media (max-width: 56.25em) {
@@ -479,19 +569,23 @@ body {
 .composition_photo:hover {
   -webkit-transform: scale(1.5) translateY(-0.5rem);
           transform: scale(1.5) translateY(-0.5rem);
+  outline: 0.5rem solid #55c57a;
+  border: 0.5rem solid transparent;
   -webkit-box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.6);
           box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.6);
   z-index: 20;
-  outline: 1rem solid #55c57a;
+  /*
+			@include respond(tab-port) {
+				transform: scale(1.2) translateY(-0.5rem);
+				box-shadow: 0 1.5rem 0.5rem rgba($colBlack, 0.6);
+				outline: 0.5rem solid $colPrimary;
+			}
+			*/
 }
 
-@media (max-width: 56.25em) {
+@supports (outline-offset: 0.5rem) {
   .composition_photo:hover {
-    -webkit-transform: scale(1.2) translateY(-0.5rem);
-            transform: scale(1.2) translateY(-0.5rem);
-    -webkit-box-shadow: 0 1.5rem 0.5rem rgba(0, 0, 0, 0.6);
-            box-shadow: 0 1.5rem 0.5rem rgba(0, 0, 0, 0.6);
-    outline: 0.5rem solid #55c57a;
+    border: none;
   }
 }
 
@@ -535,18 +629,24 @@ body {
   border-radius: 3px;
   -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
           box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .feature-box_icon {
   font-size: 6rem;
-  margin-bottom: .5rem;
-  background-image: -webkit-gradient(linear, left top, right top, from(#7ed56f), to(#28b485));
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  margin-bottom: 0.5rem;
   display: inline-block;
-  -webkit-background-clip: text;
-  color: transparent;
+  color: #28b485;
+}
+
+@supports (-webkit-background-clip: text) {
+  .feature-box_icon {
+    background-image: -webkit-gradient(linear, left top, right top, from(#7ed56f), to(#28b485));
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
 }
 
 .feature-box:hover {
@@ -618,12 +718,17 @@ body {
 .card_picture {
   background-size: cover;
   height: 23rem;
-  background-blend-mode: screen;
   /* not universally supported rahter better to have transparency in linear Gradient
         &_1{
             background-image:linear-gradient(to right bottom, rgba($colSecLT, .9),rgba($colSecDK, .2) ), url(../img/nat-5.jpg);            
         }
         */
+}
+
+@supports (background-blend-mode: screen) {
+  .card_picture {
+    background-blend-mode: screen;
+  }
 }
 
 @supports ((-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0))) {
@@ -634,18 +739,18 @@ body {
 }
 
 .card_picture_1 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#ffb900), to(#ff7730)), url(../img/nat-5.jpg);
-  background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 185, 0, 0.8)), to(rgba(255, 119, 48, 0.8))), url(../img/nat-5.jpg);
+  background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)), url(../img/nat-5.jpg);
 }
 
 .card_picture_2 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#7ed56f), to(#28b485)), url(../img/nat-3.jpg);
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-3.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.8)), to(rgba(40, 180, 133, 0.8))), url(../img/nat-3.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-3.jpg);
 }
 
 .card_picture_3 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#2998ff), to(#5643fa)), url(../img/nat-7.jpg);
-  background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(41, 152, 255, 0.8)), to(rgba(86, 67, 250, 0.8))), url(../img/nat-7.jpg);
+  background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.8), rgba(86, 67, 250, 0.8)), url(../img/nat-7.jpg);
 }
 
 .card_heading {
@@ -742,16 +847,20 @@ body {
   }
   .card_side_back {
     border-radius: 0px;
-    -webkit-transform: rotateY(0);
-            transform: rotateY(0);
+    -webkit-transform: none;
+            transform: none;
     -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
             clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
     margin-top: -8rem;
     padding-bottom: 0rem;
   }
   .card:hover .card_side_front {
-    -webkit-transform: rotateY(0);
-            transform: rotateY(0);
+    -webkit-transform: none;
+            transform: none;
+  }
+  .card:hover .card_side_back {
+    -webkit-transform: none;
+            transform: none;
   }
   .card_cta {
     position: relative;
@@ -770,7 +879,7 @@ body {
   }
 }
 
-@supports not ((-webkit-backface-visibility: hidden) or (backface-visibility: hidden)) {
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .card {
     height: auto;
     border-radius: 10px;
@@ -787,16 +896,20 @@ body {
   }
   .card_side_back {
     border-radius: 0px;
-    -webkit-transform: rotateY(0);
-            transform: rotateY(0);
+    -webkit-transform: none;
+            transform: none;
     -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
             clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
     margin-top: -8rem;
     padding-bottom: 0rem;
   }
   .card:hover .card_side_front {
-    -webkit-transform: rotateY(0);
-            transform: rotateY(0);
+    -webkit-transform: none;
+            transform: none;
+  }
+  .card:hover .card_side_back {
+    -webkit-transform: none;
+            transform: none;
   }
   .card_cta {
     position: relative;

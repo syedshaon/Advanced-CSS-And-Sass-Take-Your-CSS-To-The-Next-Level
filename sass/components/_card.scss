@@ -44,7 +44,10 @@
 	&_picture {
 		background-size: cover;
 		height: 23rem;
-		background-blend-mode: screen;
+		@supports (background-blend-mode: screen) {
+			background-blend-mode: screen;
+		}
+
 		@supports (clip-path: polygon(0 0)) {
 			clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 		}
@@ -54,13 +57,16 @@
         }
         */
 		&_1 {
-			background-image: linear-gradient(to right bottom, $colSecLT, $colSecDK), url(../img/nat-5.jpg);
+			background-image: linear-gradient(to right bottom, rgba($colSecLT, 0.8), rgba($colSecDK, 0.8)),
+				url(../img/nat-5.jpg);
 		}
 		&_2 {
-			background-image: linear-gradient(to right bottom, $colPrimaryLT, $colPrimaryDK), url(../img/nat-3.jpg);
+			background-image: linear-gradient(to right bottom, rgba($colPrimaryLT, 0.8), rgba($colPrimaryDK, 0.8)),
+				url(../img/nat-3.jpg);
 		}
 		&_3 {
-			background-image: linear-gradient(to right bottom, $colTerLT, $colTerDK), url(../img/nat-7.jpg);
+			background-image: linear-gradient(to right bottom, rgba($colTerLT, 0.8), rgba($colTerDK, 0.8)),
+				url(../img/nat-7.jpg);
 		}
 	}
 	&_heading {
@@ -140,14 +146,17 @@
 
 			&_back {
 				border-radius: 0px;
-				transform: rotateY(0);
+				transform: none;
 				clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
 				margin-top: -8rem;
 				padding-bottom: 0rem;
 			}
 		}
 		&:hover &_side_front {
-			transform: rotateY(0);
+			transform: none;
+		}
+		&:hover &_side_back {
+			transform: none;
 		}
 
 		&_cta {
@@ -166,7 +175,8 @@
 			font-size: 4rem;
 		}
 	}
-	@supports not (backface-visibility: hidden) {
+
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 		height: auto;
 		border-radius: 10px;
 		background-color: $colWhite;
@@ -179,14 +189,17 @@
 
 			&_back {
 				border-radius: 0px;
-				transform: rotateY(0);
+				transform: none;
 				clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
 				margin-top: -8rem;
 				padding-bottom: 0rem;
 			}
 		}
 		&:hover &_side_front {
-			transform: rotateY(0);
+			transform: none;
+		}
+		&:hover &_side_back {
+			transform: none;
 		}
 
 		&_cta {

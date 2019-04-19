@@ -1,0 +1,51 @@
+@import "abstract/variables";
+@import "abstract/mixins";
+@import "abstract/functions";
+
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+@import "base/animation";
+
+.card {
+	height: auto;
+	border-radius: 10px;
+	background-color: $colWhite;
+	box-shadow: 0 1.5rem 4rem rgba($colBlack, 0.25);
+	&_side {
+		height: auto;
+		position: relative;
+		padding-bottom: 8rem;
+		box-shadow: none;
+
+		&_back {
+			border-radius: 0px;
+			transform: none;
+			clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+			margin-top: -8rem;
+			padding-bottom: 0rem;
+		}
+	}
+	&:hover &_side_front {
+		transform: none;
+	}
+	&:hover &_side_back {
+		transform: none;
+	}
+
+	&_cta {
+		position: relative;
+		top: 0;
+		left: 0;
+		transform: translate(0);
+		width: 100%;
+		padding: 4rem;
+	}
+	&_price_box {
+		margin-bottom: 3rem;
+	}
+
+	&_price_value {
+		font-size: 4rem;
+	}
+}
