@@ -619,13 +619,18 @@ body {
   background-size: cover;
   height: 23rem;
   background-blend-mode: screen;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   /* not universally supported rahter better to have transparency in linear Gradient
         &_1{
             background-image:linear-gradient(to right bottom, rgba($colSecLT, .9),rgba($colSecDK, .2) ), url(../img/nat-5.jpg);            
         }
         */
+}
+
+@supports ((-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0))) {
+  .card_picture {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
 }
 
 .card_picture_1 {
@@ -721,6 +726,51 @@ body {
 }
 
 @media (max-width: 75em) {
+  .card {
+    height: auto;
+    border-radius: 10px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25);
+            box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25);
+  }
+  .card_side {
+    height: auto;
+    position: relative;
+    padding-bottom: 8rem;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .card_side_back {
+    border-radius: 0px;
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+    -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+    margin-top: -8rem;
+    padding-bottom: 0rem;
+  }
+  .card:hover .card_side_front {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  .card_cta {
+    position: relative;
+    top: 0;
+    left: 0;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    width: 100%;
+    padding: 4rem;
+  }
+  .card_price_box {
+    margin-bottom: 3rem;
+  }
+  .card_price_value {
+    font-size: 4rem;
+  }
+}
+
+@supports not ((-webkit-backface-visibility: hidden) or (backface-visibility: hidden)) {
   .card {
     height: auto;
     border-radius: 10px;
