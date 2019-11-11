@@ -33,6 +33,7 @@
 
 	position: relative;
 	&_logo-box {
+		animation: fromLeft linear 2s;
 		position: absolute;
 		top: 4rem;
 		left: 4rem;

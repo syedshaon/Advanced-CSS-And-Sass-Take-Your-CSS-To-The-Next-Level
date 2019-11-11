@@ -19,7 +19,7 @@
 			letter-spacing: 2.5rem;
 			font-weight: 700;
 			position: relative;
-			animation: fromLeft ease-in-out 1s;
+			animation: fromLeft linear 2s;
 
 			@include respond(phone) {
 				letter-spacing: 1rem;
@@ -31,7 +31,7 @@
 			font-size: 2rem;
 			letter-spacing: 1.1rem;
 			display: block;
-			animation: fromRight ease-in-out 1s;
+			animation: fromRight 2s linear 2s 1 backwards;
 			@include respond(phone) {
 				letter-spacing: 0.5rem;
 			}
